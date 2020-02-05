@@ -2,7 +2,14 @@
   last name:
   topping:
   quantity: -->
+  <br>
+  <br>
+  <br>
 <p>First name: <%= @order.first_name  %> </p>
 <p>Last name: <%= @order.last_name  %> </p>
 <p>Topping: <%= @order.topping  %> </p>
 <p>Quantity: <%= @order.quantity  %> </p>
+<br>
+<form action="/pizza-orders/<%= @order.id%>/delete" method="post">
+  <input type="submit" value="Delete order"/><br>
+</form>

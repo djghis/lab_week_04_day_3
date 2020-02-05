@@ -4,6 +4,11 @@ require( 'pry-byebug' )
 
 require_relative("./models/pizza_order")
 also_reload("./models/*")
+
+get '/' do
+  erb(:homepage)
+end
+
 #read all index
 get '/pizza-orders' do
   @orders = PizzaOrder.all()
@@ -20,7 +25,9 @@ post '/pizza-orders' do
   erb(:create)
 end
 
-
+get 'pizza-orders/homepage' do
+  erb(:homepage)
+end
 
 get '/pizza-orders/:id/edit' do
   @order = PizzaOrder.find(params[:id])
